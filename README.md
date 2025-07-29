@@ -19,7 +19,7 @@ Bu projede, **Kotlin** programlama dili ve **Android Studio** kullanarak gelişt
 
 - **Android Studio** (Kotlin)
 - **Firebase Authentication**
-- ** Lottie Animasyonları**
+- **Lottie Animasyonları**
 
 ---
 
