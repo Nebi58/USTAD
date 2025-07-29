@@ -7,7 +7,7 @@ Bu projede, **Kotlin** programlama dili ve **Android Studio** kullanarak gelişt
 - **Firebase Authentication** kullanılarak telefon numaralarının eklenmesi ve doğrulama sistemine erişimin yapılması
 - **PhoneAuthOptions** ile doğrulama seçeneklerini tanımlama
 - **PhoneAuthProvider** üzerinden OTP (One-Time Password) gönderme ve doğrulama
-- - Callbacks (`onCodeSent`, `onVerificationCompleted`, `onVerificationFailed`) ile durum takibi
+- Callbacks (`onCodeSent`, `onVerificationCompleted`, `onVerificationFailed`) ile durum takibi
 - **Lottie animasyonları** kullanılarak görsel tasarımların zenginleştirilmesi
 - **TextWatcher** ile editText'ler üzerinde dinlemeler yapılması
 - **ArrayAdapter** kullanılarak şirketlerin tanımlanması
