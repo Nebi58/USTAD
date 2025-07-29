@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_phones"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".PhonesActivity">
+
+    <!-- Üstte logo ve destek butonu -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Sol Ustad ikonu -->
+        <ImageView
+            android:id="@+id/imgUstadLogo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ustad"
+            android:contentDescription="Ustad Logo" />
+
+        <!-- Ortayı boşa bırakmak için weight -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSupport"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Destek"
+            android:textColor="#0D032E"
+            app:icon="@drawable/destek_img"
+            app:iconTint="@null"
+            app:iconSize="24dp"
+            android:backgroundTint="@android:color/white"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            app:strokeColor="#0D032E"
+            app:strokeWidth="2dp"
+            app:cornerRadius="12dp"
+            app:iconGravity="textStart"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+    <!-- Ana CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/card_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <!-- Başlık ve sayfa numarası satırı -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp">
+
+                <!-- Başlık metni -->
+                <TextView
+                    android:id="@+id/txtWelcomeHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Hoş geldiniz!"
+                    android:textColor="@color/background_light"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:gravity="start" />
+
+                <!-- Sayfa numarası -->
+                <TextView
+                    android:id="@+id/txtPage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1/3"
+                    android:textColor="@color/background_light"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <!-- Telefon ikonu -->
+            <ImageView
+                android:id="@+id/imgPhoneSignUp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/graphic_signup"
+                android:padding="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp" />
+
+            <!-- Açıklama metni -->
+            <TextView
+                android:id="@+id/txtDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lütfen kayıtlı telefon numaranızı girin."
+                android:textColor="#0D032E"
+                android:textSize="13sp"
+                android:textAlignment="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Telefon numarası girişi -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false"
+                app:errorEnabled="true"
+                app:boxStrokeColor="@color/primary_blue"
+                app:boxStrokeWidth="2dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Telefon Numarası"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:textColor="@color/text_primary"
+                    android:padding="16dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!-- Şirket kurmak istiyorum metni -->
+            <TextView
+                android:id="@+id/txtCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Şirket kurmak istiyorum"
+                android:textColor="#22105D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Devam et butonu -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVerificationCode"
+                android:layout_width="300dp"
+                android:layout_height="56dp"
+                android:text="Doğrulama Kodu Al"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="#FF704D"
+                app:cornerRadius="20dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="24dp"/>
+
+
+            <!-- 3 yan yana sayfa göstergesi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginStart="-0.1dp"
+                android:layout_marginEnd="-0.1dp">
+
+                <View
+                    android:layout_width="31.87dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/indicator_current"
+                    android:layout_marginEnd="2dp" />
+
+                <View
+                    android:layout_width="31.87dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/rounded_indicator_inactive"
+                    android:layout_marginStart="-0.1dp"
+                    android:layout_marginEnd="-0.1dp" />
+
+                <View
+                    android:layout_width="31.87dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/rounded_indicator_inactive"
+                    android:layout_marginStart="2dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

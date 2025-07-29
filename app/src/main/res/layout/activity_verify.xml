@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_verify"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".VerifyActivity">
+
+    <!-- Üstte logo ve destek butonu -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="-16dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!-- Sol Ustad ikonu -->
+        <ImageView
+            android:id="@+id/imgUstadLogo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:contentDescription="Ustad Logo"
+            android:src="@drawable/ustad" />
+
+        <!-- Ortayı boşa bırakmak için weight -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSupport"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@android:color/white"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:text="Destek"
+            android:textColor="#0D032E"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/destek_img"
+            app:iconGravity="textStart"
+            app:iconSize="24dp"
+            app:iconTint="@null"
+            app:strokeColor="#0D032E"
+            app:strokeWidth="2dp" />
+
+    </LinearLayout>
+
+    <!-- Ana CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewVerification"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/card_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <!-- Başlık ve sayfa numarası satırı -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Başlık metni -->
+                <TextView
+                    android:id="@+id/txtHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Doğrulama"
+                    android:textColor="@color/background_light"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <!-- Sayfa numarası -->
+                <TextView
+                    android:id="@+id/txtPage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2/3"
+                    android:textColor="@color/background_light"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+            <!-- Telefon ikonu -->
+            <ImageView
+                android:id="@+id/imgPhonePassword"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/graphic_password"
+                android:padding="20dp"
+                android:layout_marginBottom="3dp" />
+
+            <!-- Açıklama metni -->
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lütfen numaralı cep telefonunuza gönderilen doğrulama şifresini girin."
+                android:textColor="#0D032E"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="40dp" />
+
+            <!-- 6 haneli kod girişi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"
+                android:paddingStart="1dp"
+                android:paddingEnd="1dp">
+
+                <!-- Kod 1 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    app:boxStrokeColor="@color/primary_blue"
+                    app:boxStrokeWidth="2dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtCode1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textAlignment="center"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Kod 2 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout2"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    app:boxStrokeColor="@color/primary_blue"
+                    app:boxStrokeWidth="2dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtCode2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textAlignment="center"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Kod 3 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout3"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    app:boxStrokeColor="@color/primary_blue"
+                    app:boxStrokeWidth="2dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtCode3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textAlignment="center"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Kod 4 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout4"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    app:boxStrokeColor="@color/primary_blue"
+                    app:boxStrokeWidth="2dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtCode4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textAlignment="center"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Kod 5 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout5"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    app:boxStrokeColor="@color/primary_blue"
+                    app:boxStrokeWidth="2dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtCode5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textAlignment="center"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Kod 6 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout6"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    app:boxStrokeColor="@color/primary_blue"
+                    app:boxStrokeWidth="2dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtCode6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textAlignment="center"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <!-- Yeni şifre al metni -->
+            <TextView
+                android:id="@+id/txtNewPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yeni şifre al"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Doğrula butonu -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVerification"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Doğrula"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="#FF704D"
+                app:cornerRadius="20dp"
+                android:textColor="@color/white"
+                android:enabled="false"
+                android:alpha="0.5" />
+
+            <!-- Çıkış Yap butonu -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExit"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Çıkış Yap"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="20dp"
+                android:textColor="@color/text_primary"
+                app:strokeColor="@color/border_light"
+                app:strokeWidth="1dp"
+                android:layout_marginBottom="24dp"
+                android:enabled="false"
+                android:alpha="0.5" />
+
+            <!-- 3 yan yana sayfa göstergesi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginEnd="2dp">
+
+                <View
+                    android:layout_width="31.87dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/indicator_active"
+                    android:layout_marginEnd="2dp" />
+
+                <View
+                    android:layout_width="31.87dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/indicator_current"
+                    android:layout_marginStart="-0.1dp"
+                    android:layout_marginEnd="-0.1dp" />
+
+                <View
+                    android:layout_width="31.87dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/rounded_indicator_inactive"
+                    android:layout_marginStart="2dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

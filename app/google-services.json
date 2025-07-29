@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "256026105593",
+    "project_id": "ustad-22aee",
+    "storage_bucket": "ustad-22aee.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256026105593:android:3ed748cb3c17dce12cf428",
+        "android_client_info": {
+          "package_name": "com.nebi.ustad"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAZFwQNApPbKlvUYbnXB3ubmt_3eHT4iQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Ana renkler -->
+    <color name="primary_blue">#2563EB</color>
+    <color name="light_blue">#3B82F6</color>
+    <color name="dark_blue">#1E40AF</color>
+    
+    <!-- Arka plan renkleri -->
+    <color name="background_light">#3A2387</color>
+    <color name="card_background">#FFFFFF</color>
+    
+    <!-- Metin renkleri -->
+    <color name="text_primary">#1E293B</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_hint">#94A3B8</color>
+    
+    <!-- Border ve gölge renkleri -->
+    <color name="border_light">#E2E8F0</color>
+    <color name="shadow_color">#1F2937</color>
+    
+    <!-- Button renkleri -->
+    <color name="button_primary">#2563EB</color>
+    <color name="button_disabled">#CBD5E1</color>
+
+    <color name="text">#0D032E</color>
+</resources>

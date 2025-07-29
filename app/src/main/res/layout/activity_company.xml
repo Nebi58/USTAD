@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_company"
+    android:background="@color/background_light"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CompanyActivity">
+
+
+
+    <!-- Üstte logo ve destek butonu -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="-16dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!-- Sol Ustad ikonu -->
+        <ImageView
+            android:id="@+id/imgUstadLogo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:contentDescription="Ustad Logo"
+            android:src="@drawable/ustad" />
+
+        <!-- Ortayı boşa bırakmak için weight -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSupport"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@android:color/white"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:text="Destek"
+            android:textColor="#0D032E"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/destek_img"
+            app:iconGravity="textStart"
+            app:iconSize="24dp"
+            app:iconTint="@null"
+            app:strokeColor="#0D032E"
+            app:strokeWidth="2dp" />
+
+    </LinearLayout>
+
+    <!-- Ana CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewCompany"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="50dp"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <!-- Başlık ve sayfa numarası satırı -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Başlık metni -->
+                <TextView
+                    android:id="@+id/txtCompanyHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="Şirket seçimi"
+                    android:textColor="@color/background_light"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <!-- Sayfa numarası -->
+                <TextView
+                    android:id="@+id/txtPage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3/3"
+                    android:textColor="@color/background_light"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <!-- Telefon ikonu -->
+            <ImageView
+                android:id="@+id/imgPhoneCompany"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="20dp"
+                android:src="@drawable/graphic_accounting" />
+
+            <!-- Açıklama metni -->
+            <TextView
+                android:id="@+id/txtDescCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="Kayıtlı şirketlerinizden hangisi ile ilerlemek istersiniz?"
+                android:textAlignment="center"
+                android:textColor="#0D032E"
+                android:textSize="16sp" />
+
+            <!-- Şirket seçimi Spinner -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:hint="Şirket seçin"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxStrokeColor="@color/primary_blue"
+                app:boxStrokeWidth="2dp"
+                app:endIconMode="dropdown_menu"
+                app:hintTextColor="@color/text_hint">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteCompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_autocomplete_background"
+                    android:dropDownWidth="match_parent"
+                    android:dropDownHeight="wrap_content"
+                    android:dropDownHorizontalOffset="8dp"
+                    android:dropDownVerticalOffset="8dp"
+                    android:inputType="none"
+                    android:padding="18dp"
+                    android:textColor="@color/text_primary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Şirket kurmak istiyorum metni -->
+            <TextView
+                android:id="@+id/txtCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:text="Şirket kurmak istiyorum"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Devam et butonu -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnForward"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:alpha="0.5"
+                android:enabled="false"
+                android:text="Devam Et"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="#FF704D"
+                app:cornerRadius="20dp" />
+
+            <!-- Çıkış Yap butonu -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExit"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="24dp"
+                android:alpha="0.5"
+                android:enabled="false"
+                android:text="Çıkış Yap"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/border_light"
+                app:strokeWidth="1dp" />
+
+            <!-- 3 yan yana sayfa göstergesi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-0.1dp"
+                android:layout_marginEnd="-0.1dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="31.87dp"
+                    android:layout_height="6dp"
+                    android:layout_marginEnd="2dp"
+                    android:background="@drawable/indicator_current" />
+
+                <View
+                    android:layout_width="31.87dp"
+                    android:layout_height="6dp"
+                    android:layout_marginStart="-0.1dp"
+                    android:layout_marginEnd="-0.1dp"
+                    android:background="@drawable/indicator_current" />
+
+                <View
+                    android:layout_width="31.87dp"
+                    android:layout_height="6dp"
+                    android:layout_marginStart="2dp"
+                    android:background="@drawable/indicator_active" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
